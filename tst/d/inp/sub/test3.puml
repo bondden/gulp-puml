@@ -1,6 +1,6 @@
 @startuml
 
-!include thm.puml
+!include tst/d/inp/sub/thm.puml
 
 header
 

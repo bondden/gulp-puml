@@ -1,5 +1,7 @@
 syntax: glob
 
+tst/d/out/
+
 .idea/
 nbproject/
 .run

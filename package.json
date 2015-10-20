@@ -30,6 +30,7 @@
   "devDependencies": {
     "chai": "^3.3.0",
     "es6-module-loader": "^0.17.8",
+    "event-stream": "^3.3.2",
     "fs-extra": "*",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",

@@ -1,7 +1,7 @@
 {
 	"rules":{
     "strict": [
-			2,
+			1,
 			"global"
     ],
 		"indent":[
@@ -21,6 +21,7 @@
 			"always"
 		],
     "eqeqeq": 1,
+    "no-undef":1,
     "no-sync": 2,
     "no-unneeded-ternary": 1,
     "no-unreachable": 1,

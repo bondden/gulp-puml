@@ -30,7 +30,7 @@ gulp.task('default', function () {
 
 ##### format
 
-Type: `string`  
+Type: `string`
 Default: `svg`
 
 Format of output files.
