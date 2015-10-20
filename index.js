@@ -1,32 +1,69 @@
 'use strict';
-var gutil = require('gulp-util');
+var gutil 	= require('gulp-util');
 var through = require('through2');
-var someModule = require('some-module');
+var PumlRenderer 		= require('esf-puml').PumlRenderer;
+var stream = require('stream');
+var streamBuffers = require("stream-buffers");
 
 module.exports = function (options) {
 
-	if (!options.foo) {
-		throw new gutil.PluginError('gulp-puml', '`foo` required');
-	}
+	var options=options||{
+		"format":"svg"
+	};
 
 	return through.obj(function (file, enc, cb) {
+
 		if (file.isNull()) {
 			cb(null, file);
 			return;
 		}
 
-		if (file.isStream()) {
-			cb(new gutil.PluginError('gulp-puml', 'Streaming not supported'));
-			return;
+		var rdr=new PumlRenderer();
+		var fmt='svg';
+
+		if(options.format && (
+			options.format === 'png' ||
+			options.format === 'svg' ||
+			options.format === 'eps'
+		) ){
+			fmt=options.format;
 		}
 
-		try {
-			file.contents = new Buffer(someModule(file.contents.toString(), options));
-			this.push(file);
-		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-puml', err));
-		}
+		if (file.isBuffer()) {
+
+			try{
+
+				var myReadableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
+				  frequency: 10,
+				  chunkSize: 2048
+				});
+
+				file.contents =
+					myReadableStreamBuffer
+					.pipe(rdr.stream(fmt));
+
+				myReadableStreamBuffer
+					.put(file.contents, "utf8")
+				;
+
+			} catch (err) {
+				this.emit('error', new gutil.PluginError('gulp-puml', err));
+			}
+
+    }
+
+    if (file.isStream()) {
+			try {
+
+	      file.contents = file.contents.pipe(rdr.stream(fmt));
+
+			} catch (err) {
+				this.emit('error', new gutil.PluginError('gulp-puml', err));
+			}
+
+    }
 
 		cb();
+		
 	});
 };
