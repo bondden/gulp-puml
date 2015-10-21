@@ -1,5 +1,5 @@
 # gulp-puml
-[![Build Status](https://travis-ci.org/bondden/gulp-puml.svg?branch=master)](https://travis-ci.org/bondden/gulp-puml)
+<!-- [![Build Status](https://travis-ci.org/bondden/gulp-puml.svg?branch=master)](https://travis-ci.org/bondden/gulp-puml) -->
 
 [PlantUML](http://plantuml.com/) rendering [Gulp](http://gulpjs.com/) plugin.
 
