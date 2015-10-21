@@ -23,6 +23,7 @@ module.exports=function(options){
 
     var rdr=new PumlRenderer();
     var fmt="svg";
+    var ccwd=null||options.cwd||path.dirname(file.path);
 
     if(options.format&&(
         options.format==="png"||
@@ -42,7 +43,6 @@ module.exports=function(options){
         });
 
         let fcnt=file.contents;
-        let ccwd=null||options.cwd||path.dirname(file.path);
 
         file.contents=rdblStmBfr.pipe(rdr.stream(fmt,ccwd));
 
@@ -57,7 +57,7 @@ module.exports=function(options){
     }else if(file.isStream()){
       try{
 
-        file.contents=file.contents.pipe(rdr.stream(fmt));
+        file.contents=file.contents.pipe(rdr.stream(fmt,ccwd));
 
       }catch(e){
         this.emit("error",new gutil.PluginError("gulp-puml",e));

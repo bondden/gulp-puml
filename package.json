@@ -1,6 +1,6 @@
 {
   "name": "gulp-puml",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Renders PlantUML to SVG",
   "license": "MIT",
   "repository": "bondden/gulp-puml",
