@@ -1,6 +1,6 @@
 {
   "name": "gulp-puml",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Renders PlantUML to SVG",
   "license": "MIT",
   "repository": "bondden/gulp-puml",
@@ -25,7 +25,7 @@
     "esf"
   ],
   "dependencies": {
-    "esf-puml": "^0.4.3",
+    "esf-puml": "^0.4.4",
     "gulp-util": "^3.0.1",
     "stream-buffers": "^2.2.0",
     "through2": "^2.0.0"
