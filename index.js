@@ -42,7 +42,7 @@ module.exports=function(options){
         });
 
         let fcnt=file.contents;
-        let ccwd=null||options.cwd||file.cwd;
+        let ccwd=null||options.cwd||path.dirname(file.path);
 
         file.contents=rdblStmBfr.pipe(rdr.stream(fmt,ccwd));
 
