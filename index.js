@@ -42,8 +42,9 @@ module.exports=function(options){
         });
 
         let fcnt=file.contents;
+        let ccwd=null||options.cwd;
 
-        file.contents=rdblStmBfr.pipe(rdr.stream(fmt));
+        file.contents=rdblStmBfr.pipe(rdr.stream(fmt,ccwd));
 
         rdblStmBfr.put(fcnt,"utf8");
 
