@@ -38,7 +38,7 @@ module.exports=function(options){
 
         var rdblStmBfr=new streamBuffers.ReadableStreamBuffer({
           "frequency":10,
-          "chunkSize":2048
+          "chunkSize":1024*4
         });
 
         let fcnt=file.contents;
@@ -46,6 +46,8 @@ module.exports=function(options){
         file.contents=rdblStmBfr.pipe(rdr.stream(fmt));
 
         rdblStmBfr.put(fcnt,"utf8");
+
+        rdblStmBfr.destroySoon();
 
       }catch(e){
         this.emit("error",new gutil.PluginError("gulp-puml",e));
