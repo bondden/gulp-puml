@@ -1,6 +1,11 @@
 syntax: glob
 
-tst/d/out/
+# project specific
+
+npm.upd.sh
+tst/d/out/*
+
+# common
 
 .idea/
 nbproject/

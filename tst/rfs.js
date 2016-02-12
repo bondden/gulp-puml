@@ -41,7 +41,7 @@ suite("gulp-puml on real file system suite",function(){
 
   test("test Dot",(done)=>{
 
-    exec("java -jar "+path.resolve(__dirname+"/../node_modules/esf-puml/bin/plantuml.8034.jar")+" -testdot",(e,r)=>{
+    exec("java -jar "+path.resolve(__dirname+"/../node_modules/esf-puml/bin/plantuml.jar")+" -testdot",(e,r)=>{
       if(e){
         done(e);
         return e;
