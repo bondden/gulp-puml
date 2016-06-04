@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save-dev gulp-puml
+$ npm i -D gulp-puml
 ```
 
 ## Usage
