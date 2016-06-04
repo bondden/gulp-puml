@@ -19,6 +19,7 @@
     "test": "mocha -R spec -u tdd -c ./tst/index.js",
     "testrfs": "mocha -R spec -u tdd -c ./tst/rfs.js"
   },
+  "main":"index.js",
   "files": [
     "index.js"
   ],
