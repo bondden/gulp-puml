@@ -9,7 +9,6 @@ var
   through      =require("through2"),
   PumlRenderer =require("esf-puml").PumlRenderer,
   streamBuffers=require("stream-buffers"),
-  stream       =require("stream"),
   path         =require("path")
   ;
 
