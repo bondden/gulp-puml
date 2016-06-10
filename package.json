@@ -21,7 +21,10 @@
   },
   "main":"index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "license.md",
+    "readme.md",
+    "tst/"
   ],
   "keywords": [
     "gulpplugin",
