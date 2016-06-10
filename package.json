@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "mocha -R spec -u tdd -c ./tst/index.js",
-    "testrfs": "mocha -R spec -u tdd -c ./tst/rfs.js"
+    "testrfs": "npm i -D; mocha -R spec -u tdd -c ./tst/rfs.js"
   },
   "main":"index.js",
   "files": [
