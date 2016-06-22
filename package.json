@@ -1,6 +1,6 @@
 {
   "name": "gulp-puml",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "Renders PlantUML to SVG",
   "license": "MIT",
   "repository": {
@@ -19,7 +19,7 @@
     "test": "mocha -R spec -u tdd -c ./tst/index.js",
     "testrfs": "npm i -D; mocha -R spec -u tdd -c ./tst/rfs.js"
   },
-  "main":"index.js",
+  "main": "index.js",
   "files": [
     "index.js",
     "license.md",
@@ -32,20 +32,20 @@
     "esf"
   ],
   "dependencies": {
-    "esf-puml": "^0.6.0",
+    "esf-puml": "^0.6.2",
     "gulp-util": "^3.0.7",
     "stream-buffers": "^3.0.0",
     "through2": "^2.0.1"
   },
   "devDependencies": {
     "babel-polyfill": "^6.9.1",
-    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-es2015-node6": "^0.2.0",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.5.0",
-    "event-stream": "^3.3.2",
+    "event-stream": "^3.3.3",
     "fs-extra": "^0.30.0",
     "gulp": "^3.9.1",
-    "istanbul": "^0.4.3",
+    "istanbul": "^0.4.4",
     "mocha": "^2.5.3",
     "mocha-lcov-reporter": "^1.2.0"
   }
